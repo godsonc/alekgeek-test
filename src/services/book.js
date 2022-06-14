@@ -1,5 +1,6 @@
 import http from './http'
 
 export const fetchAllBooks = async () => {
-	return http.get('/book/')
+	const res = await http.get('/book/')
+	return res.data
 }
