@@ -1,6 +1,7 @@
 import { Container, Grid } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { fetchAllBooks } from "../services/book";
+import "./Books.css";
 
 const Books = () => {
   const [books, setBooks] = useState([]);
@@ -29,7 +30,7 @@ const Books = () => {
       {loading ? (
         <div>Loading</div>
       ) : (
-        <Container>
+        <Container className="bookview">
           {books.map((book, index) => {
             return (
               <Grid
@@ -40,7 +41,7 @@ const Books = () => {
                 key={index}
                 my={5}
                 templateColumns="repeat(5, 1fr)"
-                gap={3}
+                gap={6}
               >
                 {getBookImage(book.resources)}
                 <text item xs={1} colSpan={1} w="100%" h="10">
@@ -48,7 +49,7 @@ const Books = () => {
                     alt={book.title}
                     height={80}
                     width={60}
-                    src="https://www.gutenberg.org/cache/epub/84/pg84.cover.small.jpg"
+                    src="https://www.gutenberg.org/cache/epub/2701/pg2701.cover.medium.jpg"
                   />
                 </text>
                 <text>
