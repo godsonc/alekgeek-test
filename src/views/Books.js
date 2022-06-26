@@ -1,4 +1,5 @@
 import { Container, Grid } from "@mui/material";
+import { Nav, Navbar } from "react-bootstrap";
 import React, { useEffect, useState } from "react";
 import { fetchAllBooks } from "../services/book";
 import "./Books.css";
@@ -27,6 +28,16 @@ const Books = () => {
 
   return (
     <>
+      <Nav>
+        <Navbar bg="dark" variant="dark">
+          <Navbar.Brand href="#home">Navbar</Navbar.Brand>
+          <Nav className="me-auto">
+            <Nav.Link href="#home">Home</Nav.Link>
+            <Nav.Link href="#features">Features</Nav.Link>
+            <Nav.Link href="#pricing">Pricing</Nav.Link>
+          </Nav>
+        </Navbar>
+      </Nav>
       {loading ? (
         <div>Loading</div>
       ) : (
@@ -54,10 +65,10 @@ const Books = () => {
                 </text>
                 <text>
                   <text fontSize="sm">{book.title}</text>
-                  <text fontSize="xs">by {book.agents[0].person}</text>
+                  <text fontSize="xm">by {book.agents[0].person}</text>
                 </text>
                 <text colSpan={5} w="100%" h="10">
-                  <text color="blue.400" fontSize="xm">
+                  <text color="green" fontSize="xl">
                     View
                   </text>
                 </text>
